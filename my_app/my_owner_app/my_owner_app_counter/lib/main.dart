@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_owner_app_counter/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
     /*sugiere ser de tipo constant, ya que el estado no cambia porque es tipo "
     less" , tambien sin estado
     * */
-    return const MaterialApp(home: Center(child: Text("Hi My Fucking s World")));
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false, home: HomeScreen());
   }
 }
