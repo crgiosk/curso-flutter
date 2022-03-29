@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+//Stateless no puede redibujar un widget (view)
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     const fontSize30 = TextStyle(fontSize: 30);
+    int counter = 16;
     return Scaffold(
         appBar: AppBar(
           title: const Text("Fk U"),
@@ -19,22 +21,22 @@ class HomeScreen extends StatelessWidget {
             //crossAxisAlignment es alineacion horizontal solamente
             //crossAxisAlignment: CrossAxisAlignment.center,
             //mainAxisSize: MainAxisSize.max,
-            children: const <Widget>[
-              Text("Numero de Clicks", style: fontSize30),
-              Text("2", style: fontSize30)
+            children: <Widget>[
+              const Text("Numero de Clicks", style: fontSize30),
+              Text('$counter', style: fontSize30)
             ],
           ),
         ),
-        floatingActionButtonLocation:
-            FloatingActionButtonLocation.centerFloat,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         //with icon and text
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
-            print("button pressed");
+            counter++;
+            print("button pressed : $counter");
           },
           elevation: 10,
-          label: const Text('Save'),
-          icon: const Icon(Icons.save),
+          label: const Text('+='),
+          icon: const Icon(Icons.add),
           backgroundColor: Colors.green,
         )
         //normal icon
@@ -46,6 +48,7 @@ class HomeScreen extends StatelessWidget {
           tooltip: 'Approve',
           backgroundColor: Colors.green,
           child: const Icon(Icons.navigation, textDirection: TextDirection.rtl),
-        )*/);
+        )*/
+        );
   }
 }
