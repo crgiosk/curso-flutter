@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/screens/list_view.dart';
+import 'package:flutter_components/screens/list_view_decorated.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home: ListView1Screen(),
+      home: ListViewDecorated(),
     );
   }
 }
