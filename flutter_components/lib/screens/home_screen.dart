@@ -5,9 +5,22 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('HomeScreen'),
+    return Scaffold(
+      appBar:  AppBar(
+        centerTitle: true,
+        title: const Text("Fundamentos en Flutter"),
+        elevation: 5,
+      ),
+      body: ListView.separated(
+          itemBuilder: (context, index) => ListTile(
+            trailing: const Icon(Icons.abc_outlined),
+            title: Text("data $index"),
+            onTap: (){
+
+            },
+          ),
+          separatorBuilder: (_, __) => const Divider(),
+          itemCount: 10
       ),
     );
   }
